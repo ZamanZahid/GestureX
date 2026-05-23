@@ -8,17 +8,11 @@ import math
 import time
 from _thread import start_new_thread
 
-# ========================
-# Colors
-# ========================
 
 GOLD = (97, 208, 245)
 WHITE = (255, 255, 255)
 DARK = (5, 3, 1)
 
-# ========================
-# Mouse Control
-# ========================
 
 class Mouse:
     def __init__(self):
@@ -37,10 +31,6 @@ class Mouse:
 
     def moveCursor(self, x, y):
         pyautogui.moveTo(x, y)
-
-# ========================
-# Setup
-# ========================
 
 cap = cv2.VideoCapture(0)
 
@@ -83,10 +73,6 @@ while True:
 
     frame = cv2.flip(frame, 1)
 
-    # ========================
-    # Dark Camera Overlay
-    # ========================
-
     overlay = frame.copy()
 
     cv2.rectangle(
@@ -123,10 +109,6 @@ while True:
 
             h, w, _ = frame.shape
 
-            # ========================
-            # Draw Gold Skeleton
-            # ========================
-
             for a, b in connections:
 
                 x1 = int(handLms.landmark[a].x * w)
@@ -143,9 +125,6 @@ while True:
                     2
                 )
 
-            # ========================
-            # Draw Landmarks
-            # ========================
 
             for id, lm in enumerate(handLms.landmark):
 
@@ -158,16 +137,13 @@ while True:
                     screen_y = cy * screen_h / h
 
                     
-                    # detect hand side
                     wrist_x = handLms.landmark[0].x
                     thumb_x = handLms.landmark[4].x
 
-                    # right hand
                     if thumb_x < wrist_x:
                         screen_x -= 400
                         screen_y -= 100
 
-                    # left hand
                     else:
                         screen_x += 30
                         screen_y -= 100
@@ -180,7 +156,6 @@ while True:
                         screen_y
                     )
 
-                # larger circles
                 if id == 4 or id == 8 or id == 12:
 
                     cv2.circle(
@@ -217,9 +192,6 @@ while True:
                         1
                     )
 
-            # ========================
-            # Close App With Fist Twice
-            # ========================
 
             current_fist = is_fist(handLms)
 
@@ -242,9 +214,6 @@ while True:
             if fist_count >= 2:
                 should_close = True
 
-            # ========================
-            # Mouse Controls
-            # ========================
 
             try:
 
@@ -277,11 +246,6 @@ while True:
 
             except:
                 pass
-
-    # ========================
-    # Text
-    # ========================
-
     
 
     cv2.putText(
