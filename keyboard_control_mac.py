@@ -1,4 +1,4 @@
-import cv2
+import cv2 
 from cvzone.HandTrackingModule import HandDetector
 from time import sleep, time
 from pynput.keyboard import Controller
