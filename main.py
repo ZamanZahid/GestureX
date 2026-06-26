@@ -19,7 +19,7 @@ def open_eye():
     subprocess.Popen([sys.executable, EYE_CONTROL_SCRIPT])
 
 root = tk.Tk()
-root.title("Gesture Control Hub")
+root.title("GestureX Control Hub")
 root.geometry("360x270")
 root.configure(bg="#050301")
 
