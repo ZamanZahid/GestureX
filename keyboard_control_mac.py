@@ -9,6 +9,7 @@ cap.set(4, 400)
 
 detector = HandDetector(detectionCon=0.8, maxHands=2)
 
+
 keys = [
     ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Delete"],
     ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Enter"],
@@ -18,6 +19,7 @@ keys = [
 finalText = ""
 caps_lock_on = False
 keyboard = Controller()
+
 
 GOLD = (97, 208, 245)
 DARK = (5, 3, 1)
