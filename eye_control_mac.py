@@ -5,18 +5,12 @@ import time
 import numpy as np
 from collections import deque
 
-# ========================
-# Colors
-# ========================
 
 GOLD = (97, 208, 245)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 DARK = (5, 3, 1)
 
-# ========================
-# Mediapipe Setup
-# ========================
 
 mp_face_mesh = mp.solutions.face_mesh
 face_mesh = mp_face_mesh.FaceMesh(
@@ -53,9 +47,6 @@ calib_max_x = None
 calib_min_y = None
 calib_max_y = None
 
-# ========================
-# Eye Functions
-# ========================
 
 def eye_aspect_ratio(landmarks, eye_points, img_w, img_h):
 
@@ -87,9 +78,6 @@ def iris_position(landmarks, iris_points, img_w, img_h):
 
     return iris_center
 
-# ========================
-# Calibration Visual
-# ========================
 
 def draw_calibration_target(img, point, countdown):
 
@@ -121,9 +109,6 @@ def draw_calibration_target(img, point, countdown):
         2
     )
 
-# ========================
-# Calibration
-# ========================
 
 def calibrate_eye(cap):
 
@@ -229,9 +214,7 @@ def calibrate_eye(cap):
 
     cv2.destroyWindow("Calibration")
 
-# ========================
-# Gaze Mapping
-# ========================
+
 
 def map_gaze_to_screen(rel_x, rel_y):
 
@@ -323,9 +306,7 @@ while True:
             img_h
         )
 
-        # ========================
-        # Draw Eye Dots
-        # ========================
+
 
         for p in LEFT_EYE + RIGHT_EYE:
 
@@ -368,16 +349,11 @@ while True:
             duration=0
         )
 
-        # ========================
-        # Blink Detection
-        # ========================
+
 
         left_closed = left_ear < BLINK_THRESHOLD
         right_closed = right_ear < BLINK_THRESHOLD
 
-        # ========================
-        # Close App
-        # ========================
 
         if (
             left_closed
@@ -409,9 +385,7 @@ while True:
         else:
             both_eyes_closed_start = None
 
-        # ========================
-        # Left Click
-        # ========================
+
 
         if left_closed and not right_closed:
 
@@ -425,9 +399,7 @@ while True:
 
                 last_blink_time["left"] = time.time()
 
-        # ========================
-        # Right Click
-        # ========================
+
 
         elif right_closed and not left_closed:
 
@@ -441,9 +413,7 @@ while True:
 
                 last_blink_time["right"] = time.time()
 
-        # ========================
-        # Text
-        # ========================
+
 
         cv2.putText(
             frame,
