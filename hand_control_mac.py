@@ -14,6 +14,7 @@ WHITE = (255, 255, 255)
 DARK = (5, 3, 1)
 
 
+
 class Mouse:
     def __init__(self):
         pass
@@ -21,6 +22,7 @@ class Mouse:
     def distance(self, x1, y1, x2, y2):
         return math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
 
+    
     def leftClick(self, distance_thumb_index):
         if distance_thumb_index <= 40:
             pyautogui.click()
@@ -73,6 +75,7 @@ while True:
 
     frame = cv2.flip(frame, 1)
 
+    
     overlay = frame.copy()
 
     cv2.rectangle(
