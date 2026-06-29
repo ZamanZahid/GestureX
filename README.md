@@ -1,4 +1,5 @@
-# GestureX
+<h1 align="center">GestureX</h1>
+
 I made a computer vision project that lets you control your computer in different ways like using hand tracking and eye tracking through your camera. It has a hand-controlled mouse, hand keyboard, and eye-tracking mouse system, all connected through one hub. The project was built using Python, OpenCV, MediaPipe, and CVZone.
 
 
@@ -25,8 +26,9 @@ The project includes:
 
 <div align="center">
   <img src="Images/KeyboardControl.png" alt="Keyboard Control" width="600"/>
-  <br/>
-  <video src="Videos/KeyboardControl.mp4" width="600" controls></video>
+  <br/><br/>
+  <img src="Images/KeyboardControl.gif" alt="Keyboard Control Demo" width="600"/>
+  <sub>Gif</sub>
 </div>
 
 ---
@@ -38,9 +40,10 @@ The project includes:
 - Close application by making a fist twice
 
 <div align="center">
-  <img src="HandControl.png" alt="Hand Control" width="600"/>
-  <br/>
-  <video src="HandControl.mp4" width="600" controls></video>
+  <img src="Images/HandControl.png" alt="Hand Control" width="600"/>
+  <br/><br/>
+  <img src="Images/HandControl.gif" alt="Hand Control Demo" width="600"/>
+  <sub>Gif</sub>
 </div>
 
 ---
@@ -52,9 +55,10 @@ The project includes:
 - Close both eyes for 3.5 seconds to quit
 
 <div align="center">
-  <img src="EyeMouse.png" alt="Eye Mouse" width="600"/>
-  <br/>
-  <video src="EyeMouse.mp4" width="600" controls></video>
+  <img src="Images/EyeMouse.png" alt="Eye Mouse" width="600"/>
+  <br/><br/>
+  <img src="Images/EyeMouse.gif" alt="Eye Mouse Demo" width="600"/>
+  <sub>Gif</sub>
 </div>
 
 ---
@@ -65,4 +69,4 @@ Install dependencies:
 
 ```bash
 pip install opencv-python mediapipe==0.10.21 pyautogui cvzone cvlib numpy pillow pynput
-
+```
